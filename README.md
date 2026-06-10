@@ -1,99 +1,42 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# gatsby-sharp-39514-repro
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Reproduction for [gatsbyjs/gatsby#39514](https://github.com/gatsbyjs/gatsby/issues/39514): sharp installation fails intermittently on Node 22 production builds.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+## Root cause
 
-## 🚀 Quick start
+Gatsby pins `sharp@^0.32.6` across four packages (gatsby-plugin-sharp, gatsby-transformer-sharp, gatsby-sharp, gatsby-plugin-manifest). sharp 0.32 downloads its libvips binary from GitHub in a postinstall script. When that download fails in CI, sharp falls back to compiling libvips from source, which fails on missing system headers (`glib-object.h: No such file or directory`). sharp 0.33+ removed the postinstall download entirely and ships prebuilt binaries as regular npm packages (`@img/*`), so upgrading sharp fixes this class of failure. This repo shows what breaks in Gatsby when you do that upgrade.
 
-1.  **Create a Gatsby site.**
+## Environment
 
-    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-0/#gatsby-cli)) to create a new site, specifying the default starter.
+- Node 22 (see `.nvmrc`)
+- npm
+- macOS arm64 (the engine error mentions `darwin-arm64`, on Linux CI it would be `linux-x64`)
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+## Repro steps
 
-1.  **Start developing.**
+Each commit in this repo is one step. Build output for each step is saved in `logs/`.
 
-    Navigate into your new site’s directory and start it up.
+| Step | Commit | What happens | Log |
+|------|--------|--------------|-----|
+| 1 | scaffold gatsby-starter-default | Fresh `gatsby new` on Node 22 | - |
+| 2 | render images via StaticImage | Baseline: `gatsby build` passes on sharp 0.32.6 | `logs/01-build-sharp-0.32.6-passes.txt` |
+| 3 | override sharp to 0.34.5 | `gatsby build` fails at "Validating Rendering Engines" with `Generated engines use disallowed import "@img/sharp-darwin-arm64/sharp.node"` | `logs/02-build-sharp-0.34.5-engine-validation-fails.txt` |
+| 4 | remove DSG/SSR pages | `gatsby build` passes on sharp 0.34.5, all image processing works | `logs/03-build-sharp-0.34.5-no-engines-passes.txt` |
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+To run it yourself at any step:
 
-1.  **Open the source code and start editing!**
+```bash
+nvm use
+rm -rf node_modules package-lock.json
+npm install
+npx gatsby clean
+npx gatsby build
+```
 
-    Your site is now running at `http://localhost:8000`!
+## What this shows
 
-    Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby Tutorial](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-4/#use-graphiql-to-explore-the-data-layer-and-write-graphql-queries).
+1. Image processing itself works fine on sharp 0.34. Step 4 builds and generates all image variants correctly.
+2. The breakage is in Gatsby's engine bundling. `packages/gatsby/src/schema/graphql-engine/bundle-webpack.ts` is built around old sharp's vendor layout and also calls `sharp.vendor.installed`, an API removed in sharp 0.33. The validation in `packages/gatsby/src/utils/validate-engines/child.ts` rejects the new `@img/*` binary imports.
+3. Not visible in this repro but found by inspection: `sharp.simd()` was removed in sharp 0.33 and is still called in `packages/gatsby-sharp/src/index.ts` and `packages/gatsby-plugin-manifest/src/safe-sharp.js`. Both calls would crash on the new version.
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a typical Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-1.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) for more detail).
-
-1.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-1.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-1.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
-
-1.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-1.  **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/docs/tutorial/getting-started/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[Build, Deploy, and Host On Netlify](https://netlify.com)
-
-The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+Also worth noting: sharp 0.33+ requires Node ^18.17 || ^20.3 || >=21, slightly narrower than Gatsby's current `>=18.0.0` engines field.

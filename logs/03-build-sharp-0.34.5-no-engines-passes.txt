@@ -1,0 +1,123 @@
+success compile gatsby files - 0.835s
+
+[2K[1A[2K[Gsuccess load gatsby config - 0.026s
+
+[2K[1A[2K[Gsuccess load plugins - 0.372s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.006s
+
+[2K[1A[2K[Gsuccess initialize cache - 0.043s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.056s
+
+[2K[1A[2K[Gsuccess Compiling Gatsby Functions - 0.237s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.249s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.007s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.001s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 0.164s
+
+[2K[1A[2K[Ginfo Writing GraphQL type definitions to
+/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/schema.gql
+
+[2K[1A[2K[Gsuccess building schema - 0.362s
+
+[2K[1A[2K[Gsuccess createPages - 0.010s
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.100s
+
+[2K[1A[2K[Ginfo Total nodes: 44, SitePage nodes: 5 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.000s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 4.679s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.004s
+
+[2K[1A[2K[Gsuccess Build manifest and related icons - 1.877s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 1.903s
+
+[2K[1A[2K[Ginfo bootstrap finished - 14.066s
+
+[2K[1A[2K[Gsuccess write out requires - 0.005s
+
+[2K[1A[2K[Gsuccess Building production JavaScript and CSS bundles - 5.130s
+
+[2K[1A[2K[Gsuccess Building HTML renderer - 4.542s
+
+[2K[1A[2K[Gsuccess Execute page configs - 0.036s
+
+[2K[1A[2K[Gsuccess Caching Webpack compilations - 0.234s
+
+[2K[1A[2K[Gsuccess run queries in workers - 0.062s - 7/7 113.33/s
+
+[2K[1A[2K[Gsuccess Running gatsby-plugin-sharp.IMAGE_PROCESSING jobs - 13.911s - 4/4 0.29/s
+
+[2K[1A[2K[Gsuccess Merge worker state - 0.003s
+
+[2K[1A[2K[Gsuccess Rewriting compilation hashes - 0.002s
+
+[2K[1A[2K[Gsuccess Writing page-data.json and slice-data.json files to public directory -
+0.008s - 5/5 595.09/s
+
+[2K[1A[2K[Gsuccess Building static HTML for pages - 3.675s - 5/5 1.36/s
+
+[2K[1A[2K[Ginfo There are no new or changed slice html files to build.
+
+[2K[1A[2K[Gsuccess stitching slices - 0.004s
+
+[2K[1A[2K[Gsuccess onPostBuild - 0.000s
+
+[2K[1A[2K[G
+
+Pages
+
+┌ src/pages/404.js
+│ ├   /404/
+│ └   /404.html
+├ src/pages/index.js
+│ └   /
+├ src/pages/page-2.js
+│ └   /page-2/
+└ src/pages/using-typescript.tsx
+  └   /using-typescript/
+
+  ╭────────────────────────────────────────────────────────────────╮
+  │                                                                │
+  │   (SSG) Generated at build time                                │
+  │ D (DSG) Deferred static generation - page generated at runtime │
+  │ ∞ (SSR) Server-side renders at runtime (uses getServerData)    │
+  │ λ (Function) Gatsby function                                   │
+  │                                                                │
+  ╰────────────────────────────────────────────────────────────────╯
+
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[Ginfo Done building in 28.86786025 sec
+
+
+Pages
+
+┌ src/pages/404.js
+│ ├   /404/
+│ └   /404.html
+├ src/pages/index.js
+│ └   /
+├ src/pages/page-2.js
+│ └   /page-2/
+└ src/pages/using-typescript.tsx
+  └   /using-typescript/
+
+  ╭────────────────────────────────────────────────────────────────╮
+  │                                                                │
+  │   (SSG) Generated at build time                                │
+  │ D (DSG) Deferred static generation - page generated at runtime │
+  │ ∞ (SSR) Server-side renders at runtime (uses getServerData)    │
+  │ λ (Function) Gatsby function                                   │
+  │                                                                │
+  ╰────────────────────────────────────────────────────────────────╯
+

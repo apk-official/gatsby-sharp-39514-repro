@@ -1,0 +1,153 @@
+success compile gatsby files - 1.462s
+
+[2K[1A[2K[Gsuccess load gatsby config - 0.037s
+
+[2K[1A[2K[Gsuccess load plugins - 1.004s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.006s
+
+[2K[1A[2K[Gsuccess initialize cache - 0.048s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.059s
+
+[2K[1A[2K[Gsuccess Compiling Gatsby Functions - 0.258s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.275s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.006s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.002s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 0.240s
+
+[2K[1A[2K[Ginfo Writing GraphQL type definitions to
+/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/schema.gql
+
+[2K[1A[2K[Gsuccess building schema - 0.271s
+
+[2K[1A[2K[Gsuccess createPages - 0.025s
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.069s
+
+[2K[1A[2K[Ginfo Total nodes: 46, SitePage nodes: 7 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.000s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 4.403s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.047s
+
+[2K[1A[2K[Gsuccess Build manifest and related icons - 1.823s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 1.828s
+
+[2K[1A[2K[Ginfo bootstrap finished - 12.519s
+
+[2K[1A[2K[Gsuccess write out requires - 0.008s
+
+[2K[1A[2K[Gsuccess Building production JavaScript and CSS bundles - 5.176s
+
+[2K[1A[2K[Gsuccess Building HTML renderer - 5.301s
+
+[2K[1A[2K[Gsuccess Execute page configs - 0.037s
+
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOSPC: no space left on device, write
+[2K[1A[2K[Gsuccess Building Rendering Engines - 12.948s
+
+[2K[1A[2K[Gfailed Validating Rendering Engines - 1.144s
+
+[2K[1A[2K[G
+ ERROR #98001  ENGINE.VALIDATION
+
+Built Rendering Engines failed validation.
+
+Please open an issue with a reproduction at https://gatsby.dev/new-issue for
+more help.
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mError[0m[37m[41m:[0m[37m[41m [0m[97m[41mCould not load the "sharp" module using the darwin-arm64 runtime[0m
+[0m  [0m[97m[41mundefined: Generated engines use disallowed import "@img/sharp-darwin-arm64/sh[0m
+  [0m[97m[41marp.node". Only allowed imports are to Node.js builtin modules or engines inte[0m
+  [0m[97m[41mrnals.[0m
+[0m  [0m[97m[41mPossible solutions:[0m
+[0m  [0m[97m[41m- Ensure optional dependencies can be installed:[0m
+[0m  [0m[97m[41m    npm install --include=optional sharp[0m
+[0m  [0m[97m[41m- Ensure your package manager supports multi-platform installation:[0m
+[0m  [0m[97m[41m    See https://sharp.pixelplumbing.com/install#cross-platform[0m
+[0m  [0m[97m[41m- Add platform-specific dependencies:[0m
+[0m  [0m[97m[41m    npm install --os=darwin --cpu=arm64 sharp[0m
+[0m  [0m[97m[41m- Consult the installation documentation:[0m
+[0m  [0m[97m[41m    See https://sharp.pixelplumbing.com/install[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m283488[0m[37m [0m[37mObject.<anonymous>[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:283488:9[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m325106[0m[37m [0m[37m__webpack_require__[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:325106:42[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m282724[0m[37m [0m[37mObject.defined[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:282724:1[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m325106[0m[37m [0m[37m__webpack_require__[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:325106:42[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m282698[0m[37m [0m[37mObject.<anonymous>[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:282698:15[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m325106[0m[37m [0m[37m__webpack_require__[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:325106:42[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m282687[0m[37m [0m[37mObject.<anonymous>[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:282687:18[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m325106[0m[37m [0m[37m__webpack_require__[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:325106:42[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m282672[0m[37m [0m[37mObject.<anonymous>[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:282672:37[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m325106[0m[37m [0m[37m__webpack_require__[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:325106:42[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m282178[0m[37m [0m[37mObject.<anonymous>[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:282178:43[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m325106[0m[37m [0m[37m__webpack_require__[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:325106:42[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m281687[0m[37m [0m[37mObject.<anonymous>[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:281687:27[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m325106[0m[37m [0m[37m__webpack_require__[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:325106:42[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m280762[0m[37m [0m[37mexports.__esModule[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:280762:28[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mindex.js[0m[90m:[0m[93m325106[0m[37m [0m[37m__webpack_require__[0m
+[0m  [0m  [0m[90m/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/query-[0m
+  [0m  [0m[90mengine/index.js:325106:42[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[Gnot finished Running gatsby-plugin-sharp.IMAGE_PROCESSING jobs - 28.575s
+

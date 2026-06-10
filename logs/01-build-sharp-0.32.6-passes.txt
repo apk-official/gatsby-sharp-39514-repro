@@ -1,0 +1,141 @@
+success compile gatsby files - 0.897s
+
+[2K[1A[2K[Gsuccess load gatsby config - 0.026s
+
+[2K[1A[2K[Gsuccess load plugins - 0.372s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.008s
+
+[2K[1A[2K[Gsuccess initialize cache - 0.040s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.079s
+
+[2K[1A[2K[Gsuccess Compiling Gatsby Functions - 0.259s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.276s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.021s
+
+[2K[1A[2K[Gsuccess Clean up stale nodes - 0.009s - 10/0 0.00/s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.000s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 0.206s
+
+[2K[1A[2K[Ginfo Writing GraphQL type definitions to
+/Users/abhinavpkumar/Documents/GitHub/gatsby-sharp-39514-repro/.cache/schema.gql
+
+[2K[1A[2K[Gsuccess building schema - 0.187s
+
+[2K[1A[2K[Gsuccess createPages - 0.022s
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.131s
+
+[2K[1A[2K[Ginfo Total nodes: 46, SitePage nodes: 8 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.001s
+
+[2K[1A[2K[Gsuccess Cleaning up stale page-data - 0.022s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.000s
+
+[2K[1A[2K[Gsuccess extract queries from components - 3.428s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.002s
+
+[2K[1A[2K[Gsuccess Build manifest and related icons - 2.359s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 2.434s
+
+[2K[1A[2K[Ginfo bootstrap finished - 13.733s
+
+[2K[1A[2K[Gsuccess write out requires - 0.171s
+
+[2K[1A[2K[Gsuccess Building production JavaScript and CSS bundles - 4.875s
+
+[2K[1A[2K[Gsuccess Building HTML renderer - 5.070s
+
+[2K[1A[2K[Gsuccess Execute page configs - 0.033s
+
+[2K[1A[2K[Gsuccess Building Rendering Engines - 14.503s
+
+[2K[1A[2K[Gsuccess Validating Rendering Engines - 2.212s
+
+[2K[1A[2K[Gsuccess Caching Webpack compilations - 0.001s
+
+[2K[1A[2K[Gsuccess run queries in workers - 0.050s - 5/5 99.20/s
+
+[2K[1A[2K[Gsuccess Running gatsby-plugin-sharp.IMAGE_PROCESSING jobs - 31.187s - 6/6 0.19/s
+
+[2K[1A[2K[Gsuccess Merge worker state - 0.003s
+
+[2K[1A[2K[Gsuccess Rewriting compilation hashes - 0.004s
+
+[2K[1A[2K[Gsuccess Writing page-data.json and slice-data.json files to public directory -
+0.019s - 3/5 267.44/s
+
+[2K[1A[2K[Gsuccess Building static HTML for pages - 3.218s - 5/5 1.55/s
+
+[2K[1A[2K[Ginfo There are no new or changed slice html files to build.
+
+[2K[1A[2K[Gsuccess stitching slices - 0.002s
+
+[2K[1A[2K[Gsuccess Delete previous page data - 0.001s
+
+[2K[1A[2K[Gsuccess onPostBuild - 0.000s
+
+[2K[1A[2K[G
+
+Pages
+
+┌ src/templates/using-dsg.js
+│ └ D /using-dsg/
+├ src/pages/404.js
+│ ├   /404/
+│ └   /404.html
+├ src/pages/index.js
+│ └   /
+├ src/pages/page-2.js
+│ └   /page-2/
+├ src/pages/using-ssr.js
+│ └ ∞ /using-ssr/
+└ src/pages/using-typescript.tsx
+  └   /using-typescript/
+
+  ╭────────────────────────────────────────────────────────────────╮
+  │                                                                │
+  │   (SSG) Generated at build time                                │
+  │ D (DSG) Deferred static generation - page generated at runtime │
+  │ ∞ (SSR) Server-side renders at runtime (uses getServerData)    │
+  │ λ (Function) Gatsby function                                   │
+  │                                                                │
+  ╰────────────────────────────────────────────────────────────────╯
+
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[Ginfo Done building in 44.980074084 sec
+
+
+Pages
+
+┌ src/templates/using-dsg.js
+│ └ D /using-dsg/
+├ src/pages/404.js
+│ ├   /404/
+│ └   /404.html
+├ src/pages/index.js
+│ └   /
+├ src/pages/page-2.js
+│ └   /page-2/
+├ src/pages/using-ssr.js
+│ └ ∞ /using-ssr/
+└ src/pages/using-typescript.tsx
+  └   /using-typescript/
+
+  ╭────────────────────────────────────────────────────────────────╮
+  │                                                                │
+  │   (SSG) Generated at build time                                │
+  │ D (DSG) Deferred static generation - page generated at runtime │
+  │ ∞ (SSR) Server-side renders at runtime (uses getServerData)    │
+  │ λ (Function) Gatsby function                                   │
+  │                                                                │
+  ╰────────────────────────────────────────────────────────────────╯
+
